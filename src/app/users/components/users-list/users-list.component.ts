@@ -8,15 +8,15 @@ import { UsersApiService } from '@users/services/users-api.service';
   styleUrls: ['./users-list.component.scss']
 })
 export class UsersListComponent implements OnInit {
+  users: Array<any> = [];
 
-  constructor(
-    private usersApiService: UsersApiService
-  ) {
-   }
+  constructor(private usersApiService: UsersApiService) {
+  }
 
   ngOnInit(): void {
     this.usersApiService.getUsers()
       .then(users => {
+        this.users = users;
         console.log( users );
       })
       .catch( error => {
