@@ -11,7 +11,7 @@ export class UsersApiService {
 
   getUsers() {
 
-    return fetch('http://localhost:3000/api/v1/users')
+    return fetch('http://localhost:3000/api/v1/users?delay=500')
       .then(res => {
         return res.json();
       })

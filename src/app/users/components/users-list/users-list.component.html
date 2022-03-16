@@ -1,2 +1,14 @@
-<p>users-list works!</p>
-<p>cantidad de usuarios: {{users.length}}</p>
+<div *ngIf="loading; else loaded">loading...</div>
+<ng-template #loaded>
+    <div *ngIf="error; else infoUser">
+        <p>Error: {{ error }}</p>
+    </div>
+    <ng-template #infoUser>
+        <ul>
+            <li *ngFor="let user of users;">
+                <a routerLink="/users/{{user.id}}">{{ user.name }}</a>
+            </li>
+        </ul>
+
+    </ng-template>
+</ng-template>
