@@ -92,3 +92,5 @@ In "users-list" component, use "users-api" method added to fetch the users and r
 Each user item should display an `<a>` element with a link to the `users/:id` route.
 
 In "users-detail" component, get the id parameter from the url using the  [Activated Route](https://angular.io/guide/router-reference#activated-route) and save it in a component property called "id". Then use the method added on the "users-api" to return a user for a certain id, and display the user detail.
+
+In order to get a single user by his ID, add a method on the "users-api" service, use the `getUsers()` method as a reference. This method should receive an id parameter, and the API endpoint to use is `http://localhost:<PORT>/api/v1/users/<ID>`.
