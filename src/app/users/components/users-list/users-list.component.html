@@ -4,11 +4,10 @@
         <p>Error: {{ error }}</p>
     </div>
     <ng-template #infoUser>
-        <ul>
-            <li *ngFor="let user of users;">
-                <a routerLink="/users/{{user.id}}">{{ user.name }}</a>
-            </li>
-        </ul>
-
+        <section class="user-list-container">
+            <a *ngFor="let user of users;" routerLink="/users/{{user.id}}" class="card-styler">
+                <h3>{{ user.name }}</h3>
+            </a>
+        </section>
     </ng-template>
 </ng-template>

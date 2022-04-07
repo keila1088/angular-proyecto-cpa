@@ -19,4 +19,14 @@ export class UsersApiService {
         return res.payload.users;
       });
   }
+
+    getUserById(id: number) {
+    return fetch(`http://localhost:3000/api/v1/users/${id}?delay=500`)
+      .then(res => {
+        return res.json();
+      })
+      .then(res => {
+        return res.payload.user;
+      });
+  }
 }

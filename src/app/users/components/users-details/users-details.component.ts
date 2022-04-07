@@ -11,26 +11,30 @@ import IUser from '@users/interfaces/user';
   styleUrls: ['./users-details.component.scss']
 })
 export class UsersDetailsComponent implements OnInit {
-
-  userDetail: any;
+  user: any;
   error = '';
   loading = false;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private usersApiService: UsersApiService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
         this.loading = true;
-    this.usersApiService.getUsersById()
-      .then(users => {
-        this.users = users;
-      })
-      .catch( error => {       
-        this.error = 'hubo un error. Intente mas tarde';
-      })
-      .finally( () => {
-        this.loading = false;
-      });
+        this.route.params.subscribe(params => {
+          const id= params['id'];
+          console.log(id);
+          this.usersApiService.getUserById(id)
+            .then(user => {
+              this.user = user;
+              console.log(user);
+            })
+            .catch( error => {       
+              this.error = 'hubo un error. Intente mas tarde';
+            })
+            .finally( () => {
+              this.loading = false;
+            });
+        });
   }
 
 }
