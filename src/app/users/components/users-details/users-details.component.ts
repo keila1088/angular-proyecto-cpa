@@ -26,7 +26,7 @@ export class UsersDetailsComponent implements OnInit {
           this.usersApiService.getUserById(id)
             .then(user => {
               this.user = user;
-              console.log(user);
+              console.log(this.user.name);
             })
             .catch( error => {       
               this.error = 'hubo un error. Intente mas tarde';

@@ -1,15 +1,16 @@
+@import "../../../../variables";
 a{
     text-decoration: none;
     width: 5rem;
     text-align: center;
     font-family: pacifico;
     font-size: 1.25rem;
-    color: #58ae23;
+    @include predeterminate-color;
 }
 .nav-styler{
-    background-color: rgb(36, 116, 68);
     display: flex;
     height: 5rem;
     align-items: center;
-    box-shadow: -2px 22px 163px -31px rgba(35,232,5,0.75);
+    @include predeterminate-color;
+    @extend .box-shadow;
 }

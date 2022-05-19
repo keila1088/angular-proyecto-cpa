@@ -23,6 +23,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./src"
+              ]
+              },
             "outputPath": "dist/angular-proyecto-cpa",
             "index": "src/index.html",
             "main": "src/main.ts",

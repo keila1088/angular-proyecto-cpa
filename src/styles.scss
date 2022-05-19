@@ -1,5 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@import "variables";
+
 body{
-    background-color: rgb(18, 84, 84);
+    background-color: $main-color;
     margin: 0px;
 }

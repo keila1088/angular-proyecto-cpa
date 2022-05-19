@@ -1,0 +1,19 @@
+@use "sass:color";
+
+$main-color: rgb(91, 191, 191); 
+$topnav-bg-color: rgb(92, 92, 187);
+$topnav-font-color: pink;
+
+@mixin predeterminate-color {
+    background-color: $topnav-bg-color;
+    color: $topnav-font-color;
+}
+
+.box-shadow{
+    box-shadow: 10px 13px 29px 11px rgba(0,0,0,0.75);
+}
+/*
+definir algunas variables, mixins, extend y funciones. ver https://sass-lang.com/documentation/modules
+
+buscar que es un mixin y un extend y aplicarlo
+*/
